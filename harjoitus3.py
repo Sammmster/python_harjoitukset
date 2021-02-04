@@ -29,3 +29,5 @@ def kolmas_funktio():
     return luku
 funktion_palautus = kolmas_funktio()
 print(funktion_palautus)
+
+# funktio palautuksella ja argumentilla
