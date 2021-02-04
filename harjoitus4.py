@@ -10,3 +10,17 @@ print(luokka_objekti.x)
 
 luokka_objekti.x = 4
 print(luokka_objekti.x)
+# luokan x arvoa voidaan muuttaa
+
+
+class Toinen_luokka:
+    def __init__(self,x,y):
+        self.x = x
+        self.y = y
+
+    def tulosta_arvot(self):
+        print (self.x)
+        print (self.y)
+
+luokka2_objekti = Toinen_luokka(4,5)
+luokka2_objekti.tulosta_arvot()
