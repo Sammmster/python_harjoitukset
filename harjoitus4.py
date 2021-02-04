@@ -24,3 +24,13 @@ class Toinen_luokka:
 
 luokka2_objekti = Toinen_luokka(4,5)
 luokka2_objekti.tulosta_arvot()
+
+while True:
+    syote = input("kirjoita: ei ")
+    if syote == "ei": 
+# == tosi
+        break
+syote2 = ""
+while syote2 != "on":
+# != epätosi
+    syote = input("kirjoita: on ")
