@@ -30,7 +30,8 @@ while True:
     if syote == "ei": 
 # == tosi
         break
+
 syote2 = ""
 while syote2 != "on":
 # != epätosi
-    syote = input("kirjoita: on ")
+    syote2 = input("kirjoita: on ")
