@@ -222,7 +222,7 @@ while True:
 ## tulostaa yhden rivillä olevan merkin.
 
 
-################# Esimerkki: Luvun tekijät ############
+################# Esimerkki: Luvun tekijät ######################
 
 ## Luvun jakaminen tekijöihin tarkoittaa, että luku esitetään kertolaskuna, jossa olevia lukuja
 ## (tekijöitä) ei voi enää jakaa osiin. Toisin sanoen luku esitetään alkulukujen tulona. Esimerkiksi luvun
