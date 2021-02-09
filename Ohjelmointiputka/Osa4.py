@@ -97,3 +97,164 @@ for i in range(10):
 ## range(35, 4, -4)	    35, 31, 27, 23, 19, 15, 11, 7
 
 ## Opassarjan seuraavissa osissa nähdään, mitä muuta for-silmukalla voi tehdä kuin käydä läpi lukuvälejä.
+
+################ Keskeytys #################
+
+## Tunnussanan kysymisen voi toteuttaa myös seuraavasti:
+
+while True:
+    sana = input("Kirjoita tunnussana: ")
+    if sana == "python":
+        break
+print("Tervetuloa!")
+
+## Tässä silmukan alussa on ehto True, joka on aina tosi eikä rajoita silmukan toistamista. Kuitenkin silmukan 
+## sisällä komento break keskeyttää silmukan, jos käyttäjä antaa oikean tunnussanan. Silmukan toimintatapa on
+## siis ennallaan, mutta ehdon sijainti poikkeaa aiemmasta.
+
+## Komentoa break voi käyttää kaikissa silmukoissa: while-silmukassa se keskeyttää silmukan, vaikka alkuehto
+##  olisi voimassa, ja for-silmukassa se keskeyttää silmukan, vaikka kaikkia tietoja ei olisi vielä käsitelty.
+
+################## Uusi kierros ################
+
+## Seuraava ohjelma tulostaa parittomien lukujen neliöitä:
+
+for i in range(10):
+    if i % 2 == 0:
+        continue
+    print("Luvun", i, "neliö on", i * i)
+
+## Ohjelman tulostus on seuraava:
+
+## Luvun 1 neliö on 1
+## Luvun 3 neliö on 9
+## Luvun 5 neliö on 25
+## Luvun 7 neliö on 49
+## Luvun 9 neliö on 81
+
+## Tässä silmukan sisällä on komento continue, joka siirtyy silmukassa uudelle kierrokselle, jos käsiteltävä
+##  luku on parillinen. Komennon vaikutuksesta silmukan loppuosa jää suorittamatta, jos luku on parillinen,
+##  eli silmukka tulostaa vain parittomien lukujen neliöt.
+
+## Komentoa continue voi käyttää kaikissa silmukoissa: while-silmukassa se palaa silmukan alkuun ehdon
+## tarkistukseen, ja for-silmukassa se palaa silmukan alkuun ja siirtyy seuraavan tiedon käsittelyyn.
+
+################## Esimerkki: Viljanjyvät ############
+
+## Tarinan mukaan shakkipelin keksijä pyysi palkkiokseen yhden viljanjyvän shakkilaudan ensimmäiseen ruutuun,
+## kaksi toiseen ruutuun, neljä kolmanteen ruutuun, kahdeksan neljänteen ruutuun jne., siis joka ruutuun
+## kaksinkertaisen määrän jyviä edelliseen ruutuun verrattuna.
+
+## Seuraava ohjelma laskee, kuinka monta viljanjyvää shakkilaudan kuhunkin ruutuun tulisi ja kuinka monta
+## viljanjyvää shakkilaudalla olisi yhteensä.
+
+jyvat = 1
+kaikki = 0
+for ruutu in range(64):
+    print("Ruudussa", ruutu + 1, "on", jyvat, "jyvää")
+    kaikki += jyvat
+    jyvat *= 2
+print("Yhteensä", kaikki, "jyvää")
+
+## Ohjelman tulostus on seuraava:
+
+## Ruudussa 1 on 1 jyvää
+## Ruudussa 2 on 2 jyvää
+## Ruudussa 3 on 4 jyvää
+## Ruudussa 4 on 8 jyvää
+## ... (välissä rivejä)
+## Ruudussa 61 on 1152921504606846976 jyvää
+## Ruudussa 62 on 2305843009213693952 jyvää
+## Ruudussa 63 on 4611686018427387904 jyvää
+## Ruudussa 64 on 9223372036854775808 jyvää
+## Yhteensä 18446744073709551615 jyvää
+
+## Shakkipelin keksijän palkkiota ei pystytty koskaan maksamaan, koska koko maailmassa ei ole näin monta viljanjyvää.
+
+
+################## Esimerkki: Suorakulmiot #################
+
+
+## Seuraava ohjelma tulostaa suorakulmioita käyttäjän ohjeiden mukaisesti:
+
+while True:
+    korkeus = int(input("Korkeus: "))
+    leveys = int(input("Leveys: "))
+    if korkeus <= 0 or leveys <= 0:
+        # negatiiviset arvot eivät kelpaa
+        continue
+    for y in range(korkeus):
+        for x in range(leveys):
+            # end = "" tarkoittaa, että ei tulosteta loppuun rivinvaihtoa
+            print("*", end = "")
+        # tässä taas tulostetaan pelkkä rivinvaihto
+        print()
+    vastaus = input("Haluatko jatkaa (k/e)? ")
+    if vastaus == "e":
+        break
+
+## Ohjelman tulostus voi olla seuraava:
+
+## Korkeus: 4
+## Leveys: 5
+## *****
+## *****
+## *****
+## *****
+## Haluatko jatkaa (k/e)? k
+## Korkeus: 2
+## Leveys: 10
+## **********
+## **********
+## Haluatko jatkaa (k/e)? k
+## Korkeus: 6
+## Leveys: 3
+## ***
+## ***
+## ***
+## ***
+## ***
+## ***
+## Haluatko jatkaa (k/e)? e
+
+## Ohjelman pääsilmukka on while-silmukka, jonka jokaisella kierroksella ohjelma tulostaa yhden suorakulmion
+## for-silmukan avulla. Ensimmäinen for-silmukka tulostaa yhden suorakulmion rivin, ja toinen for-silmukka
+## tulostaa yhden rivillä olevan merkin.
+
+
+################# Esimerkki: Luvun tekijät ############
+
+## Luvun jakaminen tekijöihin tarkoittaa, että luku esitetään kertolaskuna, jossa olevia lukuja
+## (tekijöitä) ei voi enää jakaa osiin. Toisin sanoen luku esitetään alkulukujen tulona. Esimerkiksi luvun
+## 15 tekijät ovat 3 ja 5, koska 3 * 5 = 15, ja luvun 44 tekijät ovat 2, 2 ja 11, koska 2 * 2 * 11 = 44.
+## Luku 31 on alkuluku, joten sitä ei voi jakaa osiin.
+
+## Seuraava ohjelma jakaa annetun luvun tekijöihin:
+
+luku = int(input("Anna luku: "))
+tekija = 2
+while tekija <= luku:
+    while luku % tekija == 0:
+        luku //= tekija
+        if luku > 1:
+            # tulostetaan " * ", ellei kyseessä ole viimeinen tekijä
+            print(tekija, end = " * ")
+        else:
+            # viimeisen tekijän jälkeen tulee normaalisti rivinvaihto
+            print(tekija)
+    tekija += 1
+
+## Seuraavassa on muutamia ohjelman tulostuksia:
+
+## Anna luku: 15
+## 3 * 5
+
+## Anna luku: 44
+## 2 * 2 * 11
+
+## Anna luku: 31
+## 31
+
+## Ohjelma käy läpi mahdollisia luvun tekijöitä 2:sta alkaen. Jokaisen tekijän kohdalla luku jaetaan tekijällä ja
+## tekijä tulostetaan, kunnes luku ei ole enää jaollinen tekijällä. Ohjelma päättyy, kun kokeiltava tekijä on lukua
+## suurempi. Käytännössä tällöin luku on jakolaskujen seurauksena 1.
