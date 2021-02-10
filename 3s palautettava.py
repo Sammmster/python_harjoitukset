@@ -21,6 +21,5 @@ vastaus2 = input("")
 if vastaus2 == "k":
     ala = sqrt(kateetti1*kateetti2/2)
     print("Pinta-ala on ", ala)
-
 else:
     print ("Mukavaa työpäivää")
