@@ -78,3 +78,93 @@ else:
 ## Ohjelman toiminta perustuu siihen, että listan alkioon voi viitata muuttujan avulla. Listassa kauukausin
 ## numerointi alkaa nollasta, minkä vuoksi ohjelma pienentää yhden käyttäjän antamaan numeroa. Esimerkiksi
 ## jos käyttäjä antaa numeron 9, ohjelma hakee kuukauden nimen kohdasta lista[8].
+
+######### Listassa oleminen ###############
+## Totuusarvo "alkio in lista" on tosi, jos alkio on listassa. Vastaavasti totuusarvo "alkio not in lista" on tosi,
+## jos alkio ei ole listassa. Seuraava ohjlema tulostaa eri viestin listassa oleville käyttäjille.
+
+sakki = ["Sami", "Uolevi", "Antti"]
+nimi = input("Anna nimi: ")
+if nimi in sakki:
+    pritn("Mitä uutta, kuoma?")
+else:
+    print("Et kuulu sisäpiiriin")
+
+## Tässä on ohjelman mahdollisia tulostuksia:
+## Anna nimi: Sami
+## Mitä uutta, kuoma?
+
+## Tässä on ohjelman mahdollisia tulostuksia:
+## Anna nimi: Topi
+## Et kuulu sisäpiiriin
+
+## Jos nimi on Sami, Uolevi tai Antti, ohjlema tulostaa viestin "Mitä uutta, kuoma?". Muuten ohelma tulostaa
+## veistin "Et kuulu sisäpiiriin"
+
+
+############### Alkion lisääminen ########################
+## Listaan voi lisätä alkioita metodilla append. Seuraavassa esimerkissä lista on alkuksi tyhjä ja ohjelma lisää
+## siihen käyttäjän antamia sanoja. Ohjelma päättyy, kun käyttäjä antaa saman sanan uudelleen.
+
+lista = []
+while True:
+    sana = input("Kirjoita sana: ")
+    if sana not in lista:
+        lista.append(sana)
+    else:
+        print("Kirjoitit saman sanan uudelleen!")
+        break
+
+## Ohjelman tulostus voi olla seuraava:
+## Kirjoita sana: talo
+## Kirjoita sana: metsä
+## Kirjoita sana: auto
+## Kirjoita sana: tie
+## Kirjoita sana: talo
+## Kirjoitit saman sanan uudelleen!
+
+##################### Listan läpikäynti ###################
+## Listassa olevat alkiot voi käydä läpi for-silmukalla. Silmukalle annetaan muuttuja ja lista, jonka jälkeen
+## muutujan arvo on silmukan joka kierroksella vuorollaan yksi listan alkioista.
+nimet = [
+    "maanantai", "tiistai", "keskiviikko", "torstai", "perjantai", "lauantai", "sunnuntai"
+]
+for nimi in nimet:
+    print(nimi)
+
+## Ohjelman tulostus on seuraava:
+## maanantai
+## tiistai
+## keskiviikko
+## torstai
+## perjantai
+## lauantai
+## sunnuntai
+
+## Seuraava ohjelma kysyy käyttäjältä sanoja, kunnes käyttäjä antaa tyhjän sanan. Sitten ohjelma tulostaa
+## sanojen määrän ja kaikki sanat
+
+lista = []
+while True:
+    sana = input("Kirjoita eri sanoja: ")
+    if sana == "":
+        break
+    lista.append(sana)
+print("Kirjoitit", len(lista), "sanaa.")
+print("Sanat ovat:")
+for sana in lista:
+    print(sana, end = " ")
+print()
+
+## Tässä funktio len kertoo kuinka monta alkiota listassa on
+
+################ listan metodit #############
+## listaan liittyvät mm. seuraavat metodit:
+##  metodi                  selitys
+## lista.append(alkio)      lisää alkion listaan
+## lista.index(alki)        etsii alkion kohdan listassa
+## lista.count(alkio)       laskee alkion esiintymiskerran listassa
+## lista.remove(alkio)      poistaa alkion listasta
+## lista.sort()             järjestää listan alkiot
+## lista.reverse()          kääntää listan toisinpäin
+
