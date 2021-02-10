@@ -229,6 +229,7 @@ while True:
 ## 15 tekijät ovat 3 ja 5, koska 3 * 5 = 15, ja luvun 44 tekijät ovat 2, 2 ja 11, koska 2 * 2 * 11 = 44.
 ## Luku 31 on alkuluku, joten sitä ei voi jakaa osiin.
 
+
 ## Seuraava ohjelma jakaa annetun luvun tekijöihin:
 
 luku = int(input("Anna luku: "))
