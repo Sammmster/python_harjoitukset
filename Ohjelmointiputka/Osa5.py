@@ -219,6 +219,7 @@ while len(lista) > 0:
     if nimi in lista:
         print("Oikein!")
         maara += 1
+        # kokeile maara +1
         lista.remove(nimi)
     else:
         print("Ei kelpaa!")
