@@ -17,6 +17,7 @@ else:
     kateetti2 = sqrt(hypotenuusa**2 - kateetti1**2)
     print ("toisen kateetin pituus on = " , kateetti2)
 
+
 print("Haluatko myös laskea kolmion pinta-alan (k/e)?")
 vastaus2 = input("")
 if vastaus2 == "k":
