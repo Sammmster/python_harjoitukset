@@ -14,7 +14,6 @@ if vastaus == "1":
 else: 
     kateetti1 = int(input("anna ensimmäinen kateetti "))
     hypotenuusa = int(input("anna hypotenuusan pituus "))
-    #kateetti2 = sqrt(kateetti1**2 + hypotenuusa**2)
     kateetti2 = sqrt(hypotenuusa**2 - kateetti1**2)
     print ("toisen kateetin pituus on = " , kateetti2)
 
