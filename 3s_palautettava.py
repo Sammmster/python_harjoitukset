@@ -10,7 +10,8 @@ if vastaus == "1":
     kateetti2 = int(input("anna toinen kateetti "))
     hypotenuusa = sqrt(kateetti1**2 + kateetti2**2)
     print ("hypotenuusan pituus on = " , hypotenuusa)
-## vastaus = "2"
+
+## jos vastaus on jotain muuta kun = "1"
 else: 
     kateetti1 = int(input("anna ensimmäinen kateetti "))
     hypotenuusa = int(input("anna hypotenuusan pituus "))
