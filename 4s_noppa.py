@@ -20,7 +20,7 @@ import random
 
 print("Kuinka monta tahoisen nopan haluat heittää? ")
 taho = int(input(""))
-noppa_d100 =[i for i in range(1, taho)]
+noppa_d100 =[i for i in range(1, taho+1)]
 #noppa_d100 =[i for i in range(1, 101)]
 print(noppa_d100)
 print(random.choice(noppa_d100))
