@@ -16,6 +16,7 @@
 #muuta noppien lukumaara kysyy noppaluvun uudelleen
 #lopeta lopettaa ohjelman
 
+
 import random
 
 print("Kuinka monta tahoisen nopan haluat heittää? ")
